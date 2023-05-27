@@ -50,6 +50,7 @@ public:
     // to notify the producer that certain free buffers are discarded by the consumer.
     virtual void onBuffersDiscarded(const std::vector<int32_t>& slots) = 0; // Asynchronous
 
+    // MIUI ADD
     virtual void onBufferDetached(int slot) = 0;
 };
 
@@ -74,6 +75,7 @@ public:
             Parcel* reply, uint32_t flags = 0);
     virtual bool needsReleaseNotify();
     virtual void onBuffersDiscarded(const std::vector<int32_t>& slots);
+    // MIUI ADD
     virtual void onBufferDetached(int slot);
 };
 
@@ -88,6 +90,7 @@ public:
     virtual ~StubProducerListener();
     virtual void onBufferReleased() {}
     virtual bool needsReleaseNotify() { return false; }
+    // MIUI ADD
     virtual void onBufferDetached(int /**slot**/) {}
 };
 
