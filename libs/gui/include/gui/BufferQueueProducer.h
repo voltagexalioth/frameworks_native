@@ -208,6 +208,10 @@ public:
                           int8_t changeFrameRateStrategy) override;
 #endif
 
+    // MIUI ADD:
+    // See IGraphicBufferProducer::adjustMaxDequeuedBufferCount
+    virtual status_t adjustMaxDequeuedBufferCount(int count);
+
 protected:
     // see IGraphicsBufferProducer::setMaxDequeuedBufferCount, but with the ability to retrieve the
     // total maximum buffer count for the buffer queue (dequeued AND acquired)
